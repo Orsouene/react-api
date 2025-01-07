@@ -1,0 +1,61 @@
+section {
+  margin: 0 auto;
+  width: 800px;
+  padding-top: 50px;
+  padding-bottom: 700px;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Header position */
+header {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+/* body color */
+body {
+  background-color: #e5e5e5;
+}
+/* Main */
+.box {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  max-width: 20rem;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-top: 20px;
+}
+
+button {
+  color: white;
+  background-color: #daa521;
+  border: 0;
+  padding: 7px;
+}
+/* Footer */
+footer {
+  height: 100px;
+  background-color: #333333;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-p {
+  width: 80%;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 15px;
+}
