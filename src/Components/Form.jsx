@@ -64,11 +64,10 @@ function Form({ handleSubmit, handleInput, handleTags, formData }) {
               </label>
             </div>
           ))}
+          <button type="button" class="btn btn-outline-dark buttons">
+            ADD
+          </button>
         </div>
-
-        <button type="submit" className="btn btn-primary buttons">
-          ADD
-        </button>
       </form>
     </section>
   );

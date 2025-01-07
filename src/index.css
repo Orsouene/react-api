@@ -19,7 +19,7 @@ header {
 }
 /* body color */
 body {
-  background-color: #e5e5e5;
+  background-color: #e9dfc6;
 }
 /* Main */
 .box {
@@ -31,7 +31,8 @@ body {
 .card {
   max-width: 20rem;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  margin-top: 20px;
+  margin: 20px auto;
+  background-color: blanchedalmond;
 }
 
 button {
@@ -58,4 +59,7 @@ footer {
 /* BUTTONS */
 .buttons {
   margin-top: 15px;
+  background-color: blanchedalmond;
+  color: black;
+  border: 1px dashed black;
 }

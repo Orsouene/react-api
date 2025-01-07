@@ -2,24 +2,43 @@ import { useState, useEffect } from "react";
 import dolciItaliani from "../data/data";
 import Card from "./Card";
 import Form from "./Form";
+// Importato axios dopo l'aver installato
 import axios from "axios";
 function Main() {
-  const [dolceList, setDolceList] = useState(dolciItaliani);
+  const [dolceList, setDolceList] = useState([]);
   const [formData, setFormData] = useState({
     titolo: "",
     img: "",
     tags: [],
   });
+  // l'url dell mio api
   const myApi = "http://localhost:3000/posts";
+  // Una funzione per fare la chiamata axios
   function getData() {
-    axios.get(myApi).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .get(myApi)
+      .then((res) => {
+        console.log(res.data);
+        setDolceList(res.data);
+      })
+      .catch((error) => console.error("Invalid req : " + error));
   }
+  // usato l'hook useEffect per  mostrare nell'app front-end una sola volta al caricamento della pagina le dati recuperati dal backend
 
   useEffect(() => {
     getData();
   }, []);
+
+  // funzione per eliminare un elemento dall array
+  function deleteItem(id) {
+    axios
+      .delete(myApi + "/" + id)
+      .then((res) => {
+        console.log(res.data);
+        setDolceList(dolceList.filter((element) => element.id !== id));
+      })
+      .catch((error) => console.error("Invalid req : " + error));
+  }
   // funzione per agguingere un nuovo elemento all array
   function handleSubmit(e) {
     e.preventDefault();
@@ -54,10 +73,6 @@ function Main() {
         ...others,
       };
     });
-  }
-  // funzione per eliminare un elemento dall array
-  function deleteItem(id) {
-    setDolceList(dolceList.filter((element) => element.id !== id));
   }
 
   return (
