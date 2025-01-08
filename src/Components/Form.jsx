@@ -64,7 +64,7 @@ function Form({ handleSubmit, handleInput, handleTags, formData }) {
               </label>
             </div>
           ))}
-          <button type="button" class="btn btn-outline-dark buttons">
+          <button type="submit" className="btn btn-outline-dark buttons">
             ADD
           </button>
         </div>

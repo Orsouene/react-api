@@ -4,13 +4,15 @@ import Card from "./Card";
 import Form from "./Form";
 // Importato axios dopo l'aver installato
 import axios from "axios";
+const newPost = {
+  titolo: "",
+  img: "",
+  tags: [],
+};
 function Main() {
   const [dolceList, setDolceList] = useState([]);
-  const [formData, setFormData] = useState({
-    titolo: "",
-    img: "",
-    tags: [],
-  });
+  const [formData, setFormData] = useState(newPost);
+
   // l'url dell mio api
   const myApi = "http://localhost:3000/posts";
   // Una funzione per fare la chiamata axios
@@ -42,16 +44,18 @@ function Main() {
   // funzione per agguingere un nuovo elemento all array
   function handleSubmit(e) {
     e.preventDefault();
-    const nuovoDolce = {
-      id: crypto.randomUUID(),
-      ...formData,
-    };
-    setDolceList([...dolceList, nuovoDolce]);
-    setFormData({
-      titolo: "",
-      img: "",
-      tags: [],
-    });
+    // const nuovoDolce = {
+    //   id: crypto.randomUUID(),
+    //   ...formData,
+    // };
+    axios
+      .post(myApi, formData)
+      .then((res) => {
+        console.log(res.data);
+        setDolceList([...dolceList, res.data]);
+        setFormData(newPost);
+      })
+      .catch((error) => console.error("Invalid req : " + error));
   }
 
   function handleInput(e) {
