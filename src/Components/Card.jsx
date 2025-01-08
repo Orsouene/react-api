@@ -5,8 +5,13 @@ function Card({ dolciItaliani, onDelete }) {
       <div className="card-body">
         <h5 className="card-title">{dolciItaliani.titolo}</h5>
         <p className="card-text">{dolciItaliani.tags}</p>
-
-        <button onClick={onDelete}>DELETE</button>
+        <button
+          type="button"
+          onClick={onDelete}
+          className="btn btn-outline-dark buttons"
+        >
+          DELETE
+        </button>
       </div>
     </div>
   );
