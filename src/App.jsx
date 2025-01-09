@@ -8,6 +8,8 @@ import defaultLayout from "./pages/defaultLayout";
 import Homepage from "./pages/Homepage";
 // importato chi siamo
 import ChiSiamo from "./pages/ChiSiamo";
+// importato  postpage
+import Post from "./pages/Postpage";
 
 // iportate le posts
 import Posts from "./pages/Posts";
@@ -21,7 +23,10 @@ function App() {
           <Route Component={defaultLayout}>
             <Route index Component={Homepage} />
             <Route path="/chisiamo" Component={ChiSiamo} />
-            <Route path="/posts" Component={Posts} />
+            <Route path="/posts">
+              <Route index Component={Posts} />
+              <Route path=":id" Component={Post} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
