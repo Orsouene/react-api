@@ -1,6 +1,6 @@
 import dolciItaliani from "../data/data";
 
-function Form({ handleSubmit, handleInput, handleTags, formData }) {
+function AddDolce({ handleSubmit, handleInput, handleTags, formData }) {
   const allTags = [];
   dolciItaliani.forEach((dolce) => {
     // Unisci i tag, evitando duplicati (la parola "Dessert")
@@ -72,4 +72,4 @@ function Form({ handleSubmit, handleInput, handleTags, formData }) {
     </section>
   );
 }
-export default Form;
+export default AddDolce;
