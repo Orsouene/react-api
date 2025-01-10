@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import dolciItaliani from "../data/data";
-import Card from "./Card";
-import AddDolce from "./AddDolce";
+import Card from "../Components/Card";
+import AddDolce from "../Components/AddDolce";
 // Importato axios dopo l'aver installato
 import axios from "axios";
 const newPost = {
@@ -9,13 +9,16 @@ const newPost = {
   img: "",
   tags: [],
 };
-function Main() {
+function AddDolcePage() {
   const [dolceList, setDolceList] = useState([]);
   const [formData, setFormData] = useState(newPost);
 
   // l'url dell mio api
   const myApi = "http://localhost:3000";
   const endPoint = "/posts";
+
+  // usato l'hook useEffect per  mostrare nell'app front-end una sola volta al caricamento della pagina le dati recuperati dal backend
+  useEffect(getData, []);
   // Una funzione per fare la chiamata axios
   function getData() {
     axios
@@ -26,12 +29,6 @@ function Main() {
       })
       .catch((error) => console.error("Invalid req : " + error));
   }
-  // usato l'hook useEffect per  mostrare nell'app front-end una sola volta al caricamento della pagina le dati recuperati dal backend
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   // funzione per eliminare un elemento dall array
   function deleteItem(id) {
     axios
@@ -79,16 +76,6 @@ function Main() {
 
   return (
     <main className="container-fluid">
-      <div className="box">
-        {dolceList.map((dolceElement) => (
-          <div className="gap-5" key={dolceElement.id}>
-            <Card
-              dolciItaliani={dolceElement}
-              onDelete={() => deleteItem(dolceElement.id)}
-            />
-          </div>
-        ))}
-      </div>
       <AddDolce
         handleSubmit={handleSubmit}
         handleInput={handleInput}
@@ -98,4 +85,4 @@ function Main() {
     </main>
   );
 }
-export default Main;
+export default AddDolcePage;

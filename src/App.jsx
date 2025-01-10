@@ -13,6 +13,7 @@ import Post from "./pages/Postpage";
 
 // iportate le posts
 import Posts from "./pages/Posts";
+import AddDolcePage from "./pages/AddDolcepage";
 
 function App() {
   return (
@@ -21,11 +22,12 @@ function App() {
         <Routes>
           {/* al posto di component posso usare element e metto tutto il tag  =>element={<Main />}*/}
           <Route Component={defaultLayout}>
-            <Route index Component={Homepage} />
+            <Route path="/" Component={Homepage} />
             <Route path="/chisiamo" Component={ChiSiamo} />
             <Route path="/posts">
               <Route index Component={Posts} />
               <Route path=":id" Component={Post} />
+              <Route path="create" Component={AddDolcePage} />
             </Route>
           </Route>
         </Routes>

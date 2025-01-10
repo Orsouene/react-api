@@ -5,20 +5,30 @@ function Card({ dolciItaliani, onDelete }) {
     <div className="card">
       <img src={dolciItaliani.img} />
       <div className="card-body">
-        <h5 className="card-title">{dolciItaliani.titolo}</h5>
-        <p className="card-text">{dolciItaliani.tags.join(" , ")}</p>
+        <h5 className="card-title major-mono-display-regular ">
+          {dolciItaliani.titolo}
+        </h5>
+        <p className="card-text major-mono-display-regular">
+          {dolciItaliani.tags.join(",")}
+        </p>
 
         <div className="d-flex gap-2">
           <Link
-            className="btn btn-outline-dark buttons"
+            className="btn btn-outline-dark buttons major-mono-display-regular"
             to={`/posts/${dolciItaliani.id}`}
           >
-            Get Post
+            Get Details
+          </Link>
+          <Link
+            className="btn btn-outline-dark buttons major-mono-display-regular"
+            to={"/posts/create"}
+          >
+            Create yours
           </Link>
           <button
             type="button"
             onClick={onDelete}
-            className="btn btn-outline-dark buttons"
+            className="btn btn-outline-dark buttons major-mono-display-regular"
           >
             DELETE
           </button>

@@ -75,8 +75,23 @@ footer {
   list-style-type: none;
   text-decoration: none;
   color: #fff4f4;
+  font-size: 1.3rem;
 }
 
 .myList:hover {
   color: #f1c376;
+}
+
+/* font */
+
+.major-mono-display-regular {
+  font-family: "Major Mono Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card:hover {
+  box-shadow: #e9dfc6 0px 0px 0px 2px, #e9dfc6 0px 4px 6px -1px,
+    #e9dfc6 0px 1px 0px inset;
+  cursor: pointer;
 }

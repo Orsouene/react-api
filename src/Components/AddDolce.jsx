@@ -10,13 +10,14 @@ function AddDolce({ handleSubmit, handleInput, handleTags, formData }) {
       }
     });
   });
+
   return (
     <section>
       <form onSubmit={handleSubmit}>
         {/* titolo */}
         <div className="mb-3">
           <label htmlFor="titolo" className="form-label">
-            <h3>Il titolo dell&apos;articolo</h3>
+            <h3 className="major-mono-display-regular">Add Title</h3>
           </label>
           <input
             type="text"
@@ -31,7 +32,7 @@ function AddDolce({ handleSubmit, handleInput, handleTags, formData }) {
         {/* IMAGE */}
         <div className="mb-3">
           <label htmlFor="img" className="form-label">
-            <h3>l'imagine dell&apos;articolo</h3>
+            <h3 className="major-mono-display-regular">Add Image</h3>
           </label>
           <input
             type="text"
@@ -46,7 +47,7 @@ function AddDolce({ handleSubmit, handleInput, handleTags, formData }) {
         {/* TAGS */}
         <div className="card p-4">
           <label htmlFor="img" className="form-label">
-            <h3>il Tags dell&apos;articolo</h3>
+            <h3 className="major-mono-display-regular">Add tags </h3>
           </label>
           {allTags.map((tagItem) => (
             <div className="mb-3 form-check" key={tagItem}>

@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 // import dolciItaliani from "../data/data";
 import Card from "../Components/Card";
-import AddDolce from "../Components/AddDolce";
+
 // Importato axios dopo l'aver installato
 import axios from "axios";
-const newPost = {
-  titolo: "",
-  img: "",
-  tags: [],
-};
 function Posts() {
   const [dolceList, setDolceList] = useState([]);
 

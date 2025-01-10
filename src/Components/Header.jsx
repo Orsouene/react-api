@@ -4,19 +4,19 @@ function Header() {
     <header>
       <ul className="nav d-flex justify-content-center gap-5  ">
         <li>
-          <NavLink to="/" className="myList">
-            Home
+          <NavLink to="/" className="myList major-mono-display-regular">
+            -Home-
           </NavLink>
         </li>
 
         <li>
-          <NavLink to="/chisiamo" className="myList">
-            Chi siamo
+          <NavLink to="/chisiamo" className="myList major-mono-display-regular">
+            -Chi siamo-
           </NavLink>
         </li>
         <li>
-          <NavLink to="/posts" className="myList">
-            Posts
+          <NavLink to="/posts" className="myList major-mono-display-regular">
+            -Posts-
           </NavLink>
         </li>
       </ul>
