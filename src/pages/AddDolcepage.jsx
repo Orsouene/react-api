@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
-// import dolciItaliani from "../data/data";
-import Card from "../Components/Card";
+import { useNavigate } from "react-router-dom";
+
 import AddDolce from "../Components/AddDolce";
 // Importato axios dopo l'aver installato
 import axios from "axios";
+// l'url dell mio api
+const myApi = "http://localhost:3000";
+const endPoint = "/posts";
 const newPost = {
   titolo: "",
   img: "",
   tags: [],
 };
+
 function AddDolcePage() {
+  const navigate = useNavigate();
   const [dolceList, setDolceList] = useState([]);
   const [formData, setFormData] = useState(newPost);
-
-  // l'url dell mio api
-  const myApi = "http://localhost:3000";
-  const endPoint = "/posts";
-
   // usato l'hook useEffect per  mostrare nell'app front-end una sola volta al caricamento della pagina le dati recuperati dal backend
   useEffect(getData, []);
   // Una funzione per fare la chiamata axios
@@ -47,8 +47,9 @@ function AddDolcePage() {
       .post(myApi + endPoint, formData)
       .then((res) => {
         console.log(res.data);
-        setDolceList([...dolceList, res.data]);
-        setFormData(newPost);
+        setDolceList([...dolceList, res.data]); //Aggiungo il nuovo dolce alla lista
+        setFormData(newPost); // Resetto i dati del modulo
+        navigate("/posts");
       })
       .catch((error) => console.error("Invalid req : " + error));
   }
