@@ -10,7 +10,8 @@ import Homepage from "./pages/Homepage";
 import ChiSiamo from "./pages/ChiSiamo";
 // importato  postpage
 import Post from "./pages/Postpage";
-
+// importo la pagine dell notfound
+import NotFound from "./pages/NotFound";
 // iportate le posts
 import Posts from "./pages/Posts";
 import AddDolcePage from "./pages/AddDolcepage";
@@ -29,6 +30,7 @@ function App() {
               <Route path=":id" Component={Post} />
               <Route path="create" Component={AddDolcePage} />
             </Route>
+            <Route path="*" Component={NotFound} />
           </Route>
         </Routes>
       </BrowserRouter>

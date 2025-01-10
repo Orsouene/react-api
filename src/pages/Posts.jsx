@@ -25,7 +25,6 @@ function Posts() {
   useEffect(() => {
     getData();
   }, []);
-
   // funzione per eliminare un elemento dall array
   function deleteItem(id) {
     axios

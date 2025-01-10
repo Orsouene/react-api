@@ -29,16 +29,7 @@ function AddDolcePage() {
       })
       .catch((error) => console.error("Invalid req : " + error));
   }
-  // funzione per eliminare un elemento dall array
-  function deleteItem(id) {
-    axios
-      .delete(myApi + endPoint + "/" + id)
-      .then((res) => {
-        console.log(res.data);
-        setDolceList(dolceList.filter((element) => element.id !== id));
-      })
-      .catch((error) => console.error("Invalid req : " + error));
-  }
+
   // funzione per agguingere un nuovo elemento all array
   function handleSubmit(e) {
     e.preventDefault();
