@@ -17,11 +17,11 @@ import Posts from "./pages/Posts";
 // importato il fomr della creazione del card
 import AddDolcePage from "./pages/AddDolcepage";
 // importo il Alert context
-import GlobalContext from "./Context/GlobalContext";
+import { GlobalProvider } from "./Context/GlobalContext";
 function App() {
   return (
     <>
-      <GlobalContext.Provider value={}>
+      <GlobalProvider>
         <BrowserRouter>
           <Routes>
             {/* al posto di component posso usare element e metto tutto il tag  =>element={<Main />}*/}
@@ -37,7 +37,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </GlobalContext.Provider>
+      </GlobalProvider>
     </>
   );
 }

@@ -10,7 +10,7 @@ function Posts() {
   // l'url dell mio api
   const myApi = "http://localhost:3000";
   const endPoint = "/posts";
-  // Una funzione per fare la chiamata axios
+  // Una funzione per fare la chiamata axios per recuperari le dati
   function getData() {
     axios
       .get(myApi + endPoint)
