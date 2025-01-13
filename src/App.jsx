@@ -12,9 +12,11 @@ import ChiSiamo from "./pages/ChiSiamo";
 import Post from "./pages/Postpage";
 // importo la pagine dell notfound
 import NotFound from "./pages/NotFound";
-// iportate le posts
+// importate le posts
 import Posts from "./pages/Posts";
+// importato il fomr della creazione del card
 import AddDolcePage from "./pages/AddDolcepage";
+// importo il Alert context
 
 function App() {
   return (

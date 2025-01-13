@@ -51,17 +51,26 @@ function AddDolcePage() {
     setFormData({ ...formData, [e.target.name]: value });
   }
   function handleTags(e) {
+    // Usa la funzione setFormData per aggiornare lo stato del form
     setFormData((formData) => {
+      // De-struttura il valore di "tags" e tutti gli altri campi
       let { tags, ...others } = formData;
+
+      // Crea una copia dei tags esistenti
       let newTags = [...tags];
+
+      // Se il tag è già presente, rimuovilo
       if (newTags.includes(e.target.value)) {
         newTags = newTags.filter((el) => el !== e.target.value);
       } else {
+        // Se il tag non è presente, aggiungilo
         newTags.push(e.target.value);
       }
+
+      // Restituisci l'oggetto aggiornato con i nuovi tags e gli altri campi
       return {
-        tags: newTags,
-        ...others,
+        tags: newTags, // Imposta il nuovo array dei tags
+        ...others, // Mantieni gli altri campi invariati
       };
     });
   }
