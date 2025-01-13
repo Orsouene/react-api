@@ -17,25 +17,27 @@ import Posts from "./pages/Posts";
 // importato il fomr della creazione del card
 import AddDolcePage from "./pages/AddDolcepage";
 // importo il Alert context
-
+import GlobalContext from "./Context/GlobalContext";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          {/* al posto di component posso usare element e metto tutto il tag  =>element={<Main />}*/}
-          <Route Component={defaultLayout}>
-            <Route path="/" Component={Homepage} />
-            <Route path="/chisiamo" Component={ChiSiamo} />
-            <Route path="/posts">
-              <Route index Component={Posts} />
-              <Route path=":id" Component={Post} />
-              <Route path="create" Component={AddDolcePage} />
+      <GlobalContext.Provider value={}>
+        <BrowserRouter>
+          <Routes>
+            {/* al posto di component posso usare element e metto tutto il tag  =>element={<Main />}*/}
+            <Route Component={defaultLayout}>
+              <Route path="/" Component={Homepage} />
+              <Route path="/chisiamo" Component={ChiSiamo} />
+              <Route path="/posts">
+                <Route index Component={Posts} />
+                <Route path=":id" Component={Post} />
+                <Route path="create" Component={AddDolcePage} />
+              </Route>
+              <Route path="*" Component={NotFound} />
             </Route>
-            <Route path="*" Component={NotFound} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </GlobalContext.Provider>
     </>
   );
 }
