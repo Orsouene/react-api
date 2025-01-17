@@ -24,7 +24,7 @@ const GlobalProvider = ({ children }) => {
   }
   return (
     // un componente per fonire dati ai figli
-    <GlobalContext.Provider value={{ dolceList }}>
+    <GlobalContext.Provider value={{ dolceList, setDolceList }}>
       {children}
     </GlobalContext.Provider>
   );
